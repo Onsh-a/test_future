@@ -1,0 +1,36 @@
+.adjustments {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+
+
+  &_btn {
+    display: flex;
+    user-select: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 30px;
+    margin-left: 30px;
+    cursor: pointer;
+    background-color: #eaf8e6;
+  }
+
+  &_search {
+    display: flex;
+
+    &_input {
+      outline: none;
+      border: none;
+    }
+
+    &_btn {
+      padding: 8px 30px;
+      margin-right: 30px;
+      cursor: pointer;
+      user-select: none;
+      background-color: #eaf8e6;
+    }
+  }
+}

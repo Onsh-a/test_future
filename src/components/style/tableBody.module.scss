@@ -1,0 +1,82 @@
+@import './../../index.scss';
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  user-select: none;
+
+  &__head {
+
+    &_cell{
+      background-color: #333333;
+      color: white;
+      font-family: 'Montserrat-tiny';
+      height: 50px;
+      text-align: left;
+      padding-left: 10px;
+      cursor: pointer;
+
+    }
+  }
+
+  &_container {
+    width: 100%;
+    border-collapse: collapse;
+    color: #808080;
+    font-family: 'Montserrat-tiny';
+  }
+
+  &_row {
+    height: 50px;
+
+    &:hover {
+      outline: 2px dotted lightgrey;
+    }
+
+    &:nth-child(even) {
+      background-color: #eaf8e6;
+    }
+
+  }
+
+  &_data {
+    padding-left: 10px;
+
+    &:hover {
+      background-color: #57b846;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  background-color: #eaf8e6;
+  color: black;
+  height: 50px;
+  text-align: left;
+  cursor: pointer;
+  padding-left: 10px;
+
+  &::after {
+    content: url(./../../assets/img/down-arrow.svg);
+    display: inline-block;
+    width: 10px;
+  }
+}
+
+.active_reverse {
+  background-color: #eaf8e6;
+  color: black;
+  height: 50px;
+  text-align: left;
+  cursor: pointer;
+  padding-left: 10px;
+
+  &::after {
+    content: url(./../../assets/img/down-arrow.svg);
+    display: inline-block;
+    width: 10px;
+    transform: rotate(180deg);
+  }
+}

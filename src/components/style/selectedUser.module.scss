@@ -1,0 +1,10 @@
+.selected_user {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #333333;
+  padding: 7px;
+
+  &_description_text {
+    margin: 8px 0px 8px 0px;
+  }
+}
