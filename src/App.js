@@ -5,18 +5,8 @@ import './App.scss';
 import ChooseQuery from './components/chooseQuery.jsx'
 import BigDataQuery from './components/bigDataQuery'
 import SmallDataQuery from './components/smallDataQuery';
-import Fetch from './service/fetch'
 
 function App(props) {
-
-  // let [usersBig, getUsersBig] = useState([])
-  // let [usersSmall, getUsersSmall] = useState([])
-  //
-  // let data;
-  // getUsersBig(fetch(data))
-  // console.log(data);
-
-
 
   return (<div className="App">
 

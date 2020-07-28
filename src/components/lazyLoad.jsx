@@ -15,8 +15,6 @@ const LazyLoad = (props) => {
         <div className={Class.loader__dot}></div>
       </div>
     </div>
-
-
   );
 }
 

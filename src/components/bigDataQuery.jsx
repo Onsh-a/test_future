@@ -24,10 +24,10 @@ function BigData(props) {
   useEffect(() => {
     const fetchUsers = async () => {
       setLoading(true);
-      const res = await axios.get('http://www.filltext.com/?rows=25&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}');
+      const res = await axios.get('http://www.filltext.com/?rows=25&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}');
       setUsers(res.data);
       setLoading(false);
-      const res_two = await axios.get('http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}')
+      const res_two = await axios.get('http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}')
       setUsers(res_two.data);
       setLazyLoad(false)
     }
@@ -110,7 +110,7 @@ function BigData(props) {
     <AddRow addData={addData} close={handleClose} open={handleOpen} add={handleNewUser} validate={wierdValidation} isValid={isValid}/>
 
     { loading === false
-        ? <TableBody users={currentUsers} search={handleSearch} moreInfo={handleMoreInfo} moreInfoData={necessaryElement} open={handleOpen} usersPerPage={usersPerPage} totalUsers={users.length} paginate={paginate} currentPage={currentPage} lazyLoad={ lazyLoad }/>
+        ? <TableBody users={currentUsers} allUsers={users} search={handleSearch} moreInfo={handleMoreInfo} moreInfoData={necessaryElement} open={handleOpen} usersPerPage={usersPerPage} totalUsers={users.length} paginate={paginate} currentPage={currentPage} lazyLoad={ lazyLoad }/>
         : <Loading />
     }
 
