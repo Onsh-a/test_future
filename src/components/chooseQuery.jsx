@@ -7,8 +7,8 @@ const ChooseQuery = (props) => {
   return (
     <div className={Class.container}>
       <div className={Class.nav_wrapper}>
-        <NavLink to="/big_data">Big Data</NavLink>
-        <NavLink to="/small_data">Small Data</NavLink>
+        <NavLink to="/big_data">Большая база</NavLink>
+        <NavLink to="/small_data">Маленькая база</NavLink>
       </div>
     </div>
 
