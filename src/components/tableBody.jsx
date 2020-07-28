@@ -8,7 +8,7 @@ import Pagination from './pagination'
 
 const TableBody = (props) => {
 
-  let [users, setUsers] = useState(props.users);
+  let [users, setUsers] = useState();
   let [sortingType, setType] = useState({id: 'none', name: 'none', surname: 'none'})
 
   let handleClick = (e) => {
