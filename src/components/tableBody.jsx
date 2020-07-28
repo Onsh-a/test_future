@@ -74,7 +74,7 @@ const TableBody = (props) => {
       </tbody>
     </table>
 
-    <Pagination usersPerPage={props.usersPerPage} totalUsers={props.totalUsers} paginate={props.paginate} currentPage={props.users} currentPageNumb={props.currentPage} />
+    <Pagination usersPerPage={props.usersPerPage} totalUsers={props.totalUsers} paginate={props.paginate} currentPage={props.users} currentPageNumb={props.currentPage} lazyLoad = {props.lazyLoad}/>
 
     <SelectedUser selected={props.moreInfoData}/>
 
