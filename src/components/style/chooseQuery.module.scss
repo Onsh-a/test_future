@@ -1,0 +1,52 @@
+@import './../../index.scss';
+
+.container {
+  height: 100vh;
+  background-position: center;
+  background: url(./../../assets/img/bkg.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav {
+
+    &_wrapper{
+      font-family: 'Montserrat-tiny';
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      height: 300px;
+      width: 400px;
+
+      a {
+        display: flex;
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        transition: font-size 1s;
+
+        &:nth-child(1){
+          margin-bottom: 40px;
+
+          &:hover {
+            font-size: 32px;
+          }
+        }
+
+        &:nth-child(2){
+          margin-top: 40px;
+
+          &:hover {
+            font-size: 32px;
+          }
+        }
+      }
+
+    }
+
+  }
+}
