@@ -7,7 +7,7 @@ const TableAddData = (props) => {
 
   return (
     <div className={Class.adjustments_btn_container}>
-      <div onClick={ props.open } className={Class.adjustments_btn}>Add row</div>
+      <div onClick={ props.open } className={Class.adjustments_btn}>Добавить</div>
     </div>);
 }
 

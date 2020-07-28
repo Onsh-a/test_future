@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   position: fixed;
-  min-width: 500px;
+  min-width: 450px;
   background-color: #333333;
   color: white;
   transform: translate(-50%, -50%);
@@ -15,7 +15,7 @@
   left: 50%;
 
   &_title {
-    margin: 10px 0 10px 0;
+    margin: 15px 0 15px 0;
     font-size: 18px;
     width: 100%;
     text-align: center;
@@ -36,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 8px 30px;
-    margin: 10px;
+    margin: 15px 0 20px 0;
     cursor: pointer;
     color: #808080;
     background-color: #eaf8e6;
@@ -47,7 +47,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 8px 30px;
-      margin: 10px;
+      margin: 15px 0 20px 0;
       cursor: pointer;
       color: white;
       background-color: #d9534f;

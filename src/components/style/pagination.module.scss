@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  margin: 5px;
+
+  &_item {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333333;
+    margin: 3px;
+    cursor: pointer;
+
+    &_active {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #333333;
+      background-color: #eaf8e6;
+      margin: 3px;
+      cursor: pointer;
+    }
+  }
+}

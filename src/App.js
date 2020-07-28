@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import 'normalize.css';
 import './App.scss';
+import axios from 'axios'
 import TableBody from './components/tableBody';
 import Loading from './components/loading'
 import Search from './service/search'
@@ -14,11 +15,20 @@ function App(props) {
   let [necessaryElement, setElement] = React.useState([])
   let [addData, setAdd] = React.useState(false)
   let [isValid, validate] = React.useState(false)
+  let [loading, setLoading] = React.useState(false)
+  let [currentPage, setCurrentPage] = React.useState(1)
+  let [usersPerPage, setUsersPerPage] = React.useState(30)
+
 
   useEffect(() => {
-    fetch("http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}").then(response => response.json()).then(data => {
-      setUsers(data);
-    });
+    const fetchUsers = async () => {
+      setLoading(true);
+      const res = await axios.get('http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}');
+      setUsers(res.data);
+      setLoading(false);
+    }
+
+    fetchUsers()
   }, [])
 
   let backUpCache = [];
@@ -28,6 +38,19 @@ function App(props) {
     users = Search(users, dataToSearch, backUpCache[0]);
     setUsers(users)
   }
+
+  //pagination
+
+  let indexOfLastUser = currentPage * usersPerPage;
+  let indexOfFirstUser = indexOfLastUser - usersPerPage;
+  let currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  let paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+  }
+
+  //handlers
 
   let handleClose = (e) => {
     setAdd(false);
@@ -42,8 +65,6 @@ function App(props) {
       }
     })
     isValid === true ? validate(true) : validate(false)
-
-    //console.log(isValid)
   }
 
   let handleNewUser = (e) => {
@@ -82,10 +103,11 @@ function App(props) {
 
   return (<div className="App">
 
-    <AddRow addData={addData} close={handleClose} open={handleOpen} add={handleNewUser} validate={wierdValidation} isValid={isValid}/> {
-      users.length > 0
-        ? <TableBody users={users} search={handleSearch} moreInfo={handleMoreInfo} moreInfoData={necessaryElement} open={handleOpen}/>
-        : <Loading/>
+    <AddRow addData={addData} close={handleClose} open={handleOpen} add={handleNewUser} validate={wierdValidation} isValid={isValid}/>
+
+    { loading === false
+        ? <TableBody users={currentUsers} search={handleSearch} moreInfo={handleMoreInfo} moreInfoData={necessaryElement} open={handleOpen} usersPerPage={usersPerPage} totalUsers={users.length} paginate={paginate} currentPage={currentPage}/>
+        : <Loading />
     }
 
   </div>);

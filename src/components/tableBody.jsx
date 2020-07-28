@@ -4,6 +4,7 @@ import TableRow from './tableRow';
 import Sort from './../service/sort';
 import TableUpperAdjustments from './tableUpperAdustments';
 import SelectedUser from './selectedUser'
+import Pagination from './pagination'
 
 const TableBody = (props) => {
 
@@ -33,8 +34,8 @@ const TableBody = (props) => {
       : active[type] = 'ascending';
   }
 
-  let rows = props.users.map((item) => {
-    return <TableRow users={item} moreInfo={props.moreInfo}/>
+  let rows = props.users.map((item, i) => {
+    return <TableRow key={i} users={item} moreInfo={props.moreInfo}/>
   })
 
   return (<div className={Class.table_container}>
@@ -72,6 +73,8 @@ const TableBody = (props) => {
 
       </tbody>
     </table>
+
+    <Pagination usersPerPage={props.usersPerPage} totalUsers={props.totalUsers} paginate={props.paginate} currentPage={props.users} currentPageNumb={props.currentPage} />
 
     <SelectedUser selected={props.moreInfoData}/>
 

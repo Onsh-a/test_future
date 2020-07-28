@@ -8,7 +8,7 @@ const TableSearch = (props) => {
     <div className={Class.adjustments_search}>
       <input className={Class.adjustments_search_input} type="text"/>
       <div className={Class.adjustments_search_btn}
-        onClick={ props.search }>Search</div>
+        onClick={ props.search }>Поиск</div>
     </div>);
 }
 
